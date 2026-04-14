@@ -17,7 +17,6 @@ This code implements the comparative experiments on Hybrid AI. It compares Semi-
 - 📂 shared/
   - 📄 datasets
   - 📄 metrics
-  - 📄 .ipynb_checkpoints
   - 📄 architectures
 
 ## Dependencies
