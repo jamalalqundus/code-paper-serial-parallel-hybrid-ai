@@ -1,0 +1,9 @@
+dataset,domain,semi_metric,concurrency_metric,metric_used,difference,winner,dependency,error_tolerance,ambiguity
+UCI_Heart_Disease,healthcare,0.8008333333333333,0.7866666666666667,accuracy,-0.01416666666666655,SemiSymbolic,2.5,3.65,2.5
+NSL_KDD,cybersecurity,0.8119,0.8101500000000001,accuracy,-0.0017499999999998073,SemiSymbolic,1.5,3.95,3.5
+Adult_Income,social_science,0.868925,0.8709250000000001,accuracy,0.002000000000000113,Concurrency,2.5,2.0,3.8
+Credit_Card_Fraud,finance,0.9844413665743307,0.9845798707294551,accuracy,0.00013850415512439707,Concurrency,1.5,4.8,4.2
+MNIST,computer_vision,0.969625,0.971575,accuracy,0.0019500000000000073,Concurrency,2.0,3.0,2.5
+HighDep_LowAmb,industrial,0.9472499999999998,0.94575,accuracy,-0.0014999999999998348,SemiSymbolic,4.5,2.5,1.8
+LowDep_HighAmb,cybersecurity,0.6994999999999999,0.708,accuracy,0.008500000000000063,Concurrency,1.5,4.0,4.2
+Medium_Balanced,healthcare,0.8332499999999999,0.8407500000000001,accuracy,0.007500000000000173,Concurrency,3.0,3.0,3.0
