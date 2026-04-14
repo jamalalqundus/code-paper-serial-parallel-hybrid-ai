@@ -38,13 +38,12 @@ python experiments/run_comparison.py --datasets heart_disease,nsl_kdd --runs 20 
 
 Command Line Arguments
 
-Argument	Description	Default
---datasets	Dataset names (comma-separated) or "all"	"all"
---runs	Number of runs per configuration	10
---output	Output directory	"./results"
-Output Files
+- Argument	Description	Default
+  - --datasets	Dataset names (comma-separated) or "all"	"all"
+  - --runs	Number of runs per configuration	10
+  - --output	Output directory	"./results"
 
-## File	Description
+## Output Files	Description
 comparison_results.csv	Raw results for all runs
 comparison_summary.csv	Aggregated statistics per (dataset, architecture)
 contingency_analysis.csv	Contingency factors and accuracy differences
@@ -53,17 +52,27 @@ contingency_analysis.csv	Contingency factors and accuracy differences
 
 The following datasets are included (from shared/datasets/loader.py):
 
-Dataset	Domain	Task Type
-UCI_Heart_Disease	Healthcare	Classification
-NSL_KDD	Cybersecurity	Classification
-CMAPSS	Industrial	Regression
-Extending
+- Dataset	Domain	Task Type
+- UCI_Heart_Disease	Healthcare	Classification
+- NSL_KDD	Cybersecurity	Classification
+- CMAPSS	Industrial	Regression
+- Extending
+'BaseDataset',
+'UCIHeartDiseaseReal',
+'NSLKDDFallback', 
+'AdultIncomeReal',
+'CreditCardFraudReal',
+'MNISTReal',
+'SyntheticControlledDataset',
+'create_synthetic_validation_datasets'
+
+
 
 To add a new dataset:
 
-Create a new class in shared/datasets/loader.py inheriting from BaseDataset
-Implement load(), get_symbolic_rules(), and get_characteristics()
-Add to get_all_datasets() function
+- Create a new class in shared/datasets/loader.py inheriting from BaseDataset
+- Implement load(), get_symbolic_rules(), and get_characteristics()
+- Add to get_all_datasets() function
 
 # Citation
 
