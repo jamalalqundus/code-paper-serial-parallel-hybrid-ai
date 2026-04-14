@@ -9,17 +9,16 @@
 This code implements the comparative experiments on Hybrid AI. It compares Semi-symbolic (serial pipeline) and Concurrency (parallel voting) architectures across multiple datasets to derive a contingency framework for architecture selection.
 
 ## Directory Structure
-📂 Uploaded files and folders:
-  📁 my_results/
-  📄 run_comparison.py
-  📁 figures/
-  📄 generate_figures.py
-  📁 shared/
-     📄 datasets
-     📄 metrics
-     📄 .ipynb_checkpoints
-     📄 architectures
-  📁 sample_data/
+
+- 📂 my_results/
+- 📄 run_comparison.py
+- 📂 figures/
+- 📄 generate_figures.py
+- 📂 shared/
+  - 📄 datasets
+  - 📄 metrics
+  - 📄 .ipynb_checkpoints
+  - 📄 architectures
 
 ## Dependencies
 
