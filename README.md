@@ -219,11 +219,11 @@ Create a new class in `shared/architectures/base.py` inheriting from `BaseHybrid
 
 ## Citation
 
-If you use this code in your research, please cite:
+If you use this code in your research, please cite (NOTE: NOT YET PUBLISHED!!):
 
 ```bibtex
 @article{alqundus2025serial,
-  title={Serial vs. Parallel Hybrid AI: A Contingency Framework for Architecture Selection Based on Task Characteristics},
+  title={Serial vs. Parallel Hybrid AI},
   author={Al Qundus, Jamal},
   journal={Applied Intelligence},
   year={2025},
