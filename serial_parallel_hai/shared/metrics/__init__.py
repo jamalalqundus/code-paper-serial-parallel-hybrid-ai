@@ -1,4 +1,4 @@
-from shared.metrics.compute import (
+from hai.github_repos.serial_parallel_hai.shared.metrics.compute import (
     compute_metrics,
     compute_uncertainty_metrics,
     compute_failure_metrics,

@@ -222,11 +222,11 @@ Create a new class in `shared/architectures/base.py` inheriting from `BaseHybrid
 If you use this code in your research, please cite (NOTE: NOT YET PUBLISHED!!):
 
 ```bibtex
-@article{alqundus2025serial,
+@article{alqundus2026serialparallelhybridai,
   title={Serial vs. Parallel Hybrid AI},
   author={Al Qundus, Jamal},
   journal={Applied Intelligence},
-  year={2025},
+  year={2026},
   publisher={Springer}
 }
 ```

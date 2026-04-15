@@ -2,7 +2,7 @@
 Datasets module for all experiments.
 """
 
-from shared.datasets.loader import (
+from hai.github_repos.serial_parallel_hai.shared.datasets.loader import (
     BaseDataset,
     UCIHeartDiseaseReal,
     NSLKDDFallback,

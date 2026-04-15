@@ -25,9 +25,9 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Import shared modules
-from shared.architectures.base import SemiSymbolic, Concurrency
-from shared.metrics.compute import compute_metrics, compute_explainability_score
-from shared.datasets.loader import get_all_datasets, list_available_datasets
+from hai.github_repos.serial_parallel_hai.shared.architectures.base import SemiSymbolic, Concurrency
+from hai.github_repos.serial_parallel_hai.shared.metrics.compute import compute_metrics, compute_explainability_score
+from hai.github_repos.serial_parallel_hai.shared.datasets.loader import get_all_datasets, list_available_datasets
 
 # Import real ML models
 import xgboost as xgb
