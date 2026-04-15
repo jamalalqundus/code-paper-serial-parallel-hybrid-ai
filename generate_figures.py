@@ -379,25 +379,25 @@ def main():
     
     if os.path.exists(results_path):
         df = pd.read_csv(results_path)
-        print(f"✅ Loaded results from {results_path}")
+        print(f"Loaded results from {results_path}")
     elif os.path.exists(alt_path):
         df = pd.read_csv(alt_path)
-        print(f"✅ Loaded results from {alt_path}")
+        print(f"Loaded results from {alt_path}")
     else:
-        print(f"❌ Error: Results file not found.")
+        print(f"Error: Results file not found.")
         print(f"   Tried: {results_path}")
         print(f"   Tried: {alt_path}")
         print("\n   Make sure you've run experiments first:")
         print("   python experiments/run_comparison.py --datasets heart_disease,nsl_kdd --runs 20 --output ./my_results")
         sys.exit(1)
     
-    print(f"\n📊 Data loaded:")
+    print(f"\n Data loaded:")
     print(f"   Datasets: {list(df['dataset'].unique())}")
     print(f"   Architectures: {list(df['architecture'].unique())}")
     print(f"   Total rows: {len(df)}")
     
     # Generate all figures
-    print("\n📈 Generating figures (PDF and PNG formats):")
+    print("\n Generating figures (PDF and PNG formats):")
     print("-" * 50)
     
     create_accuracy_comparison(df, args.output)
@@ -409,9 +409,9 @@ def main():
     create_results_table(df, args.output)
     
     print("\n" + "=" * 50)
-    print("✅ ALL FIGURES GENERATED SUCCESSFULLY!")
+    print(" ALL FIGURES GENERATED SUCCESSFULLY!")
     print("=" * 50)
-    print(f"\n📁 Figures saved to: {args.output}/")
+    print(f"\n Figures saved to: {args.output}/")
     print("\nGenerated files:")
     print("   • accuracy_comparison.pdf/png")
     print("   • contingency_analysis.pdf/png")

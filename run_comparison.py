@@ -500,10 +500,10 @@ def save_contingency_analysis(df, output_path):
     contingency_df = pd.DataFrame(contingency_data)
     csv_path = os.path.join(output_path, 'contingency_analysis.csv')
     contingency_df.to_csv(csv_path, index=False)
-    print(f"\n💾 Contingency analysis saved to {csv_path}")
+    print(f"\n Contingency analysis saved to {csv_path}")
     
     # Print readable summary
-    print("\n📊 CONTINGENCY ANALYSIS SUMMARY")
+    print("\n CONTINGENCY ANALYSIS SUMMARY")
     print("-" * 90)
     print("{:<25s} {:>6s} {:>6s} {:>6s} {:>12s} {:>12s} {:>10s} {:>12s}".format(
         'Dataset', 'δ', 'ε', 'α', 'Semi', 'Conc', 'Diff', 'Winner'
@@ -512,7 +512,7 @@ def save_contingency_analysis(df, output_path):
     
     for _, row in contingency_df.iterrows():
         if row['semi_metric'] is not None:
-            winner_symbol = '🔵 Semi' if row['winner'] == 'SemiSymbolic' else '🟠 Conc'
+            winner_symbol = 'Semi' if row['winner'] == 'SemiSymbolic' else 'Conc'
             diff_str = f"+{row['difference']:.4f}" if row['difference'] > 0 else f"{row['difference']:.4f}"
             print("{:<25s} {:>6.2f} {:>6.2f} {:>6.2f} {:>12.4f} {:>12.4f} {:>10s} {:>12s}".format(
                 row['dataset'][:24], row['dependency'], row['error_tolerance'], 
@@ -533,7 +533,7 @@ def print_results_summary(df):
         class_df = df[df['accuracy'].notna()].copy()
         
         if len(class_df) > 0:
-            print("\n📊 CLASSIFICATION TASKS")
+            print("\n CLASSIFICATION TASKS")
             print("-" * 110)
             print("{:<25s} {:<14s} {:>12s} {:>12s} {:>12s} {:>12s} {:>12s}".format(
                 'Dataset', 'Architecture', 'Accuracy', 'Latency(s)', 'Explain', 'Confidence', 'Winner'
@@ -555,9 +555,9 @@ def print_results_summary(df):
                         
                         winner = ''
                         if arch == 'Concurrency' and conc_acc > semi_acc + 0.005:
-                            winner = '🏆'
+                            winner = 'Concurrency'
                         elif arch == 'SemiSymbolic' and semi_acc > conc_acc + 0.005:
-                            winner = '🏆'
+                            winner = 'SemiSymbolic'
                         
                         print("{:<25s} {:<14s} {:>6.4f}±{:<5.4f} {:>11.4f} {:>11.1f} {:>11.2f} {:>6s}".format(
                             dataset[:24], arch, acc_mean, acc_std, latency, explain, confidence, winner
@@ -614,7 +614,7 @@ def main():
     all_results = []
     
     for name, dataset in tqdm(datasets.items(), desc="Processing datasets"):
-        print(f"\n📊 Dataset: {name}")
+        print(f"\n Dataset: {name}")
         print(f"   Domain: {dataset.domain}")
         print(f"   Task: {dataset.task_type}")
         
@@ -624,9 +624,9 @@ def main():
         try:
             results = run_experiments(dataset, args.runs, args.epochs)
             all_results.extend(results)
-            print(f"   ✅ Completed {len(results)} runs ({args.runs} per architecture)")
+            print(f" Completed {len(results)} runs ({args.runs} per architecture)")
         except Exception as e:
-            print(f"   ❌ Error on {name}: {e}")
+            print(f" Error on {name}: {e}")
             import traceback
             traceback.print_exc()
     
@@ -639,7 +639,7 @@ def main():
     # Save raw results
     csv_path = os.path.join(args.output, 'comparison_results.csv')
     df.to_csv(csv_path, index=False)
-    print(f"\n💾 Raw results saved to {csv_path}")
+    print(f"\n Raw results saved to {csv_path}")
     
     # Print summary
     print_results_summary(df)
@@ -664,10 +664,10 @@ def main():
         summary = df.groupby(['dataset', 'architecture']).agg(agg_dict).round(4)
         summary_path = os.path.join(args.output, 'comparison_summary.csv')
         summary.to_csv(summary_path)
-        print(f"\n💾 Summary saved to {summary_path}")
+        print(f"\n Summary saved to {summary_path}")
     
     print(f"\n{'='*60}")
-    print(f"  ✅ Experiment complete!")
+    print(f" Experiment complete!")
     print(f"  Results saved to {args.output}/")
     print(f"{'='*60}")
 
